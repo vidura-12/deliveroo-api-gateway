@@ -1,24 +1,14 @@
-# Base image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-WORKDIR /app
-EXPOSE 80
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
-# Build stage
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
 
-# Copy project files
-COPY Deliveroo.Gateway/ ./Deliveroo.Gateway/
+  <ItemGroup>
+    <PackageReference Include="Ocelot" Version="23.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+  </ItemGroup>
 
-# Restore dependencies
-RUN dotnet restore Deliveroo.Gateway/Deliveroo.Gateway.csproj
-
-# Build & publish
-RUN dotnet publish Deliveroo.Gateway/Deliveroo.Gateway.csproj -c Release -o /app/publish
-
-# Final stage
-FROM base AS final
-WORKDIR /app
-COPY --from=build /app/publish .
-
-ENTRYPOINT ["dotnet", "Deliveroo.Gateway.dll"]
+</Project>
