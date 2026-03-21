@@ -1,4 +1,4 @@
-name: CI - API Gateway
+name: CI/CD - API Gateway
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout code
+      # 1️⃣ Checkout
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -20,22 +20,26 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # 3️⃣ Restore dependencies
+      # 3️⃣ Restore
       - name: Restore dependencies
         run: dotnet restore Deliveroo.Gateway
 
-      # 4️⃣ Build project
+      # 4️⃣ Build
       - name: Build project
         run: dotnet build Deliveroo.Gateway --no-restore --configuration Release
 
-      # 5️⃣ Login to DockerHub
+      # 5️⃣ Login DockerHub
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      # 6️⃣ Build Docker Image
+      # 6️⃣ Build Docker image
       - name: Build Docker image
-        run: docker build -t vidura12/deliveroo:gateway-${{ github.sha }} .
+        run: |
+          docker build -t vidura12/deliveroo-gateway:latest .
+          docker tag vidura12/deliveroo-gateway:latest vidura12/deliveroo-gateway:${{ github.sha }}
 
-      # 7️⃣ Push Docker Image
+      # 7️⃣ Push Docker image
       - name: Push Docker image
-        run: docker push vidura12/deliveroo:gateway-${{ github.sha }}
+        run: |
+          docker push vidura12/deliveroo-gateway:latest
+          docker push vidura12/deliveroo-gateway:${{ github.sha }}
