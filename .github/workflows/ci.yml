@@ -1,5 +1,4 @@
 name: CI/CD - API Gateway
-
 on:
   push:
     branches:
