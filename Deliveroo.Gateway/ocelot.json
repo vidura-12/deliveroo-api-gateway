@@ -60,6 +60,33 @@
         ],
         "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items/{menuItemId}",
         "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+      },
+       {
+        "DownstreamPathTemplate": "/api/orders/details/all",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          { "Host": "localhost", "Port": 8002 }
+        ],
+        "UpstreamPathTemplate": "/gateway/orders/details/all",
+        "UpstreamHttpMethod": [ "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/orders/details/pending",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          { "Host": "localhost", "Port": 8002 }
+        ],
+        "UpstreamPathTemplate": "/gateway/orders/details/pending",
+        "UpstreamHttpMethod": [ "GET" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/orders/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          { "Host": "localhost", "Port": 8002 }
+        ],
+        "UpstreamPathTemplate": "/gateway/orders/{everything}",
+        "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
       }
   
     ],
