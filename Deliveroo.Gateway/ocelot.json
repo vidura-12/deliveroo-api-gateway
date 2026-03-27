@@ -87,7 +87,16 @@
         ],
         "UpstreamPathTemplate": "/gateway/orders/{everything}",
         "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      }
+      },
+      {
+      "DownstreamPathTemplate": "/api/userdetails/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 8002 }
+      ],
+      "UpstreamPathTemplate": "/gateway/userdetails/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    }
   
     ],
   
