@@ -96,6 +96,69 @@
       ],
       "UpstreamPathTemplate": "/gateway/userdetails/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    } ,
+    {
+      "DownstreamPathTemplate": "/api/deliveries/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 3000 }
+      ],
+      "UpstreamPathTemplate": "/gateway/deliveries/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/deliveries/status",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 3000 }
+      ],
+      "UpstreamPathTemplate": "/gateway/deliveries/status",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/deliveries/driver/{driverId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 3000 }
+      ],
+      "UpstreamPathTemplate": "/gateway/deliveries/driver/{driverId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/drivers/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 3000 }
+      ],
+      "UpstreamPathTemplate": "/gateway/drivers/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/drivers/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 3000 }
+      ],
+      "UpstreamPathTemplate": "/gateway/drivers/register",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/drivers/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 3000 }
+      ],
+      "UpstreamPathTemplate": "/gateway/drivers/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/drivers/{id}/cities",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 3000 }
+      ],
+      "UpstreamPathTemplate": "/gateway/drivers/{id}/cities",
+      "UpstreamHttpMethod": [ "PUT" ]
     }
   
     ],
