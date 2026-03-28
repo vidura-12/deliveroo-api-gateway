@@ -159,7 +159,65 @@
       ],
       "UpstreamPathTemplate": "/gateway/drivers/{id}/cities",
       "UpstreamHttpMethod": [ "PUT" ]
-    }
+    },
+
+    ,
+{
+  "DownstreamPathTemplate": "/api/payment/{everything}",
+  "DownstreamScheme": "http",
+  "DownstreamHostAndPorts": [
+    { "Host": "localhost", "Port": 5212 }
+  ],
+  "UpstreamPathTemplate": "/gateway/payment/{everything}",
+  "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+},
+{
+  "DownstreamPathTemplate": "/api/payment/paypal/create",
+  "DownstreamScheme": "http",
+  "DownstreamHostAndPorts": [
+    { "Host": "localhost", "Port": 5212 }
+  ],
+  "UpstreamPathTemplate": "/gateway/payment/paypal/create",
+  "UpstreamHttpMethod": [ "POST" ]
+},
+{
+  "DownstreamPathTemplate": "/api/payment/paypal/capture/{orderId}",
+  "DownstreamScheme": "http",
+  "DownstreamHostAndPorts": [
+    { "Host": "localhost", "Port": 5212 }
+  ],
+  "UpstreamPathTemplate": "/gateway/payment/paypal/capture/{orderId}",
+  "UpstreamHttpMethod": [ "POST" ]
+},
+{
+  "DownstreamPathTemplate": "/api/payment/cod",
+  "DownstreamScheme": "http",
+  "DownstreamHostAndPorts": [
+    { "Host": "localhost", "Port": 5212 }
+  ],
+  "UpstreamPathTemplate": "/gateway/payment/cod",
+  "UpstreamHttpMethod": [ "POST" ]
+},
+
+{
+  "DownstreamPathTemplate": "/api/notification/{everything}",
+  "DownstreamScheme": "http",
+  "DownstreamHostAndPorts": [
+    { "Host": "localhost", "Port": 5045 }
+  ],
+  "UpstreamPathTemplate": "/gateway/email/{everything}",
+  "UpstreamHttpMethod": [ "POST" ]
+},
+
+{
+  "DownstreamPathTemplate": "/api/notification/{everything}",
+  "DownstreamScheme": "http",
+  "DownstreamHostAndPorts": [
+    { "Host": "localhost", "Port": 4000 }
+  ],
+  "UpstreamPathTemplate": "/gateway/notification/{everything}",
+  "UpstreamHttpMethod": [ "GET", "POST" ]
+}
   
     ],
   
