@@ -160,8 +160,6 @@
       "UpstreamPathTemplate": "/gateway/drivers/{id}/cities",
       "UpstreamHttpMethod": [ "PUT" ]
     },
-
-    ,
 {
   "DownstreamPathTemplate": "/api/payment/{everything}",
   "DownstreamScheme": "http",
