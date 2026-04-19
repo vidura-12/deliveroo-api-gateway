@@ -220,6 +220,6 @@
     ],
   
     "GlobalConfiguration": {
-      "BaseUrl": "http://localhost:5000"
+      "BaseUrl": "https://deliveroo-api-gateway.onrender.com"
     }
   }
