@@ -3,9 +3,9 @@
     
       {
         "DownstreamPathTemplate": "/api/auth/{everything}",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
         ],
         "UpstreamPathTemplate": "/gateway/auth/{everything}",
         "UpstreamHttpMethod": [ "POST" ]
@@ -14,9 +14,9 @@
      
       {
         "DownstreamPathTemplate": "/api/restaurant/{everything}",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
         ],
         "UpstreamPathTemplate": "/gateway/restaurant/{everything}",
         "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
@@ -25,18 +25,18 @@
      
       {
         "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
         ],
         "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus",
         "UpstreamHttpMethod": [ "POST" ]
       },
       {
         "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus/{menuId}",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
         ],
         "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus/{menuId}",
         "UpstreamHttpMethod": [ "PUT", "DELETE" ]
@@ -45,25 +45,25 @@
       
       {
         "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
         ],
         "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items",
         "UpstreamHttpMethod": [ "GET", "POST" ]
       },
       {
         "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items/{menuItemId}",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
         ],
         "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items/{menuItemId}",
         "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
       },
        {
         "DownstreamPathTemplate": "/api/orders/details/all",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
           { "Host": "localhost", "Port": 8002 }
         ],
@@ -72,7 +72,7 @@
       },
       {
         "DownstreamPathTemplate": "/api/orders/details/pending",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
           { "Host": "localhost", "Port": 8002 }
         ],
@@ -81,7 +81,7 @@
       },
       {
         "DownstreamPathTemplate": "/api/orders/{everything}",
-        "DownstreamScheme": "http",
+        "DownstreamScheme": "https",
         "DownstreamHostAndPorts": [
           { "Host": "localhost", "Port": 8002 }
         ],
@@ -90,7 +90,7 @@
       },
       {
       "DownstreamPathTemplate": "/api/userdetails/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 8002 }
       ],
@@ -99,7 +99,7 @@
     } ,
     {
       "DownstreamPathTemplate": "/api/deliveries/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 3000 }
       ],
@@ -108,7 +108,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/deliveries/status",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 3000 }
       ],
@@ -117,7 +117,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/deliveries/driver/{driverId}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 3000 }
       ],
@@ -126,7 +126,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/drivers/{everything}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 3000 }
       ],
@@ -135,7 +135,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/drivers/register",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 3000 }
       ],
@@ -144,7 +144,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/drivers/login",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 3000 }
       ],
@@ -153,7 +153,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/drivers/{id}/cities",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "localhost", "Port": 3000 }
       ],
@@ -162,7 +162,7 @@
     },
 {
   "DownstreamPathTemplate": "/api/payment/{everything}",
-  "DownstreamScheme": "http",
+  "DownstreamScheme": "https",
   "DownstreamHostAndPorts": [
     { "Host": "localhost", "Port": 5212 }
   ],
@@ -171,7 +171,7 @@
 },
 {
   "DownstreamPathTemplate": "/api/payment/paypal/create",
-  "DownstreamScheme": "http",
+  "DownstreamScheme": "https",
   "DownstreamHostAndPorts": [
     { "Host": "localhost", "Port": 5212 }
   ],
@@ -180,7 +180,7 @@
 },
 {
   "DownstreamPathTemplate": "/api/payment/paypal/capture/{orderId}",
-  "DownstreamScheme": "http",
+  "DownstreamScheme": "https",
   "DownstreamHostAndPorts": [
     { "Host": "localhost", "Port": 5212 }
   ],
@@ -189,7 +189,7 @@
 },
 {
   "DownstreamPathTemplate": "/api/payment/cod",
-  "DownstreamScheme": "http",
+  "DownstreamScheme": "https",
   "DownstreamHostAndPorts": [
     { "Host": "localhost", "Port": 5212 }
   ],
@@ -199,7 +199,7 @@
 
 {
   "DownstreamPathTemplate": "/api/notification/{everything}",
-  "DownstreamScheme": "http",
+  "DownstreamScheme": "https",
   "DownstreamHostAndPorts": [
     { "Host": "localhost", "Port": 5045 }
   ],
@@ -209,7 +209,7 @@
 
 {
   "DownstreamPathTemplate": "/api/notification/{everything}",
-  "DownstreamScheme": "http",
+  "DownstreamScheme": "https",
   "DownstreamHostAndPorts": [
     { "Host": "localhost", "Port": 4000 }
   ],
