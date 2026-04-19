@@ -8,7 +8,13 @@
           { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
         ],
         "UpstreamPathTemplate": "/gateway/auth/{everything}",
-        "UpstreamHttpMethod": [ "POST" ]
+        "UpstreamHttpMethod": [ "POST" ],
+        "HttpHandlerOptions": {
+          "AllowAutoRedirect": false,
+          "UseCookieContainer": false,
+          "UseProxy": false,
+          "MaxConnectionsPerServer": 100
+        }
       },
   
      
