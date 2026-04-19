@@ -5,7 +5,7 @@
         "DownstreamPathTemplate": "/api/auth/{everything}",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
         ],
         "UpstreamPathTemplate": "/gateway/auth/{everything}",
         "UpstreamHttpMethod": [ "POST" ]
@@ -16,7 +16,7 @@
         "DownstreamPathTemplate": "/api/restaurant/{everything}",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
         ],
         "UpstreamPathTemplate": "/gateway/restaurant/{everything}",
         "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
@@ -27,7 +27,7 @@
         "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
         ],
         "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus",
         "UpstreamHttpMethod": [ "POST" ]
@@ -36,7 +36,7 @@
         "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus/{menuId}",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
         ],
         "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus/{menuId}",
         "UpstreamHttpMethod": [ "PUT", "DELETE" ]
@@ -47,7 +47,7 @@
         "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
         ],
         "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items",
         "UpstreamHttpMethod": [ "GET", "POST" ]
@@ -56,7 +56,7 @@
         "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items/{menuItemId}",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service", "Port": 80 }
+          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 80 }
         ],
         "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items/{menuItemId}",
         "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
