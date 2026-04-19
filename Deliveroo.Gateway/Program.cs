@@ -7,6 +7,7 @@ builder.Services.AddOcelot();
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
-
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 await app.UseOcelot();
 app.Run();
