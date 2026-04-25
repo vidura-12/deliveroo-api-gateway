@@ -1,289 +1,336 @@
 {
-    "Routes": [
-    
-      {
-        "DownstreamPathTemplate": "/api/auth/{everything}",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/auth/{everything}",
-        "UpstreamHttpMethod": [ "POST" ],
-        "HttpHandlerOptions": {
-          "AllowAutoRedirect": false,
-          "UseCookieContainer": false,
-          "UseProxy": false,
-          "DangerousAcceptAnyServerCertificateValidator": true
-        },
-        "HttpRequestHeadersExtensions": {
-          "Timeout": 60000 
-        }
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
+      ],
+      "UpstreamPathTemplate": "/gateway/auth/{everything}",
+      "UpstreamHttpMethod": ["POST"],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseProxy": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
       },
-      {
+      "HttpRequestHeadersExtensions": {
+        "Timeout": 60000
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/restaurant/add-restaurant",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
       ],
       "UpstreamPathTemplate": "/gateway/restaurant/add-restaurant",
-      "UpstreamHttpMethod": [ "POST" ],
+      "UpstreamHttpMethod": ["POST"],
       "Priority": 2
     },
-      {
-        "DownstreamPathTemplate": "/api/restaurant/{everything}",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/restaurant/{everything}",
-        "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-        "Priority": 1,
-        "HttpHandlerOptions": {
-          "AllowAutoRedirect": false,
-          "UseCookieContainer": false,
-          "UseProxy": false,
-          "DangerousAcceptAnyServerCertificateValidator": true
-        },
-        "HttpRequestHeadersExtensions": {
-          "Timeout": 60000 
-        }
+    {
+      "DownstreamPathTemplate": "/api/restaurant/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
+      ],
+      "UpstreamPathTemplate": "/gateway/restaurant/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "Priority": 1,
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseProxy": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
       },
-  
-     
-      {
-        "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus",
-        "UpstreamHttpMethod": [ "POST" ],
-        "HttpHandlerOptions": {
-          "AllowAutoRedirect": false,
-          "UseCookieContainer": false,
-          "UseProxy": false,
-          "DangerousAcceptAnyServerCertificateValidator": true
-        },
-        "HttpRequestHeadersExtensions": {
-          "Timeout": 60000 
-        }
-      },
+      "HttpRequestHeadersExtensions": {
+        "Timeout": 60000
+      }
+    },
 
-      {
-        "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus/{menuId}",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus/{menuId}",
-        "UpstreamHttpMethod": [ "PUT", "DELETE" ],
-        "HttpHandlerOptions": {
-          "AllowAutoRedirect": false,
-          "UseCookieContainer": false,
-          "UseProxy": false,
-          "DangerousAcceptAnyServerCertificateValidator": true
-        },
-        "HttpRequestHeadersExtensions": {
-          "Timeout": 60000 
+    {
+      "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
+      ],
+      "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus",
+      "UpstreamHttpMethod": ["POST"],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseProxy": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
+      },
+      "HttpRequestHeadersExtensions": {
+        "Timeout": 60000
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/restaurant/menus/{restaurantId}/menus/{menuId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
+      ],
+      "UpstreamPathTemplate": "/gateway/menus/{restaurantId}/menus/{menuId}",
+      "UpstreamHttpMethod": ["PUT", "DELETE"],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseProxy": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
+      },
+      "HttpRequestHeadersExtensions": {
+        "Timeout": 60000
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
+      ],
+      "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseProxy": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
+      },
+      "HttpRequestHeadersExtensions": {
+        "Timeout": 60000
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items/{menuItemId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
+      ],
+      "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items/{menuItemId}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseProxy": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
+      },
+      "HttpRequestHeadersExtensions": {
+        "Timeout": 60000
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/orders/details/all",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "restaurant-order-management-backend-production.up.railway.app",
+          "Port": 443
         }
-      },
-  
-      
-      {
-        "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items",
-        "UpstreamHttpMethod": [ "GET", "POST" ],
-        "HttpHandlerOptions": {
-          "AllowAutoRedirect": false,
-          "UseCookieContainer": false,
-          "UseProxy": false,
-          "DangerousAcceptAnyServerCertificateValidator": true
-        },
-        "HttpRequestHeadersExtensions": {
-          "Timeout": 60000 
+      ],
+      "UpstreamPathTemplate": "/gateway/orders/details/all",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/orders/details/pending",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "restaurant-order-management-backend-production.up.railway.app",
+          "Port": 443
         }
-      },
-      {
-        "DownstreamPathTemplate": "/api/restaurant/menu/menuitems/{restaurantId}/menus/{menuId}/items/{menuItemId}",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-service-backend-1.onrender.com", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/menu-items/{restaurantId}/menus/{menuId}/items/{menuItemId}",
-        "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
-        "HttpHandlerOptions": {
-          "AllowAutoRedirect": false,
-          "UseCookieContainer": false,
-          "UseProxy": false,
-          "DangerousAcceptAnyServerCertificateValidator": true
-        },
-        "HttpRequestHeadersExtensions": {
-          "Timeout": 60000 
+      ],
+      "UpstreamPathTemplate": "/gateway/orders/details/pending",
+      "UpstreamHttpMethod": ["GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/orders/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "restaurant-order-management-backend-production.up.railway.app",
+          "Port": 443
         }
-      },
-       {
-        "DownstreamPathTemplate": "/api/orders/details/all",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-order-management-backend-production.up.railway.app", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/orders/details/all",
-        "UpstreamHttpMethod": [ "GET" ]
-      },
-      {
-        "DownstreamPathTemplate": "/api/orders/details/pending",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-order-management-backend-production.up.railway.app", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/orders/details/pending",
-        "UpstreamHttpMethod": [ "GET" ]
-      },
-      {
-        "DownstreamPathTemplate": "/api/orders/{everything}",
-        "DownstreamScheme": "https",
-        "DownstreamHostAndPorts": [
-          { "Host": "restaurant-order-management-backend-production.up.railway.app", "Port": 443 }
-        ],
-        "UpstreamPathTemplate": "/gateway/orders/{everything}",
-        "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-      },
-      {
+      ],
+      "UpstreamPathTemplate": "/gateway/orders/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
+    },
+    {
       "DownstreamPathTemplate": "/api/userdetails/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-order-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-order-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/userdetails/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-    } ,
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
+    },
     {
       "DownstreamPathTemplate": "/api/deliveries/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-delivery-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-delivery-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/deliveries/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "DownstreamPathTemplate": "/api/deliveries/status",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-delivery-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-delivery-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/deliveries/status",
-      "UpstreamHttpMethod": [ "PUT" ]
+      "UpstreamHttpMethod": ["PUT"]
     },
     {
       "DownstreamPathTemplate": "/api/deliveries/driver/{driverId}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-delivery-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-delivery-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/deliveries/driver/{driverId}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": ["GET"]
     },
     {
       "DownstreamPathTemplate": "/api/drivers/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-delivery-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-delivery-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/drivers/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "DownstreamPathTemplate": "/api/drivers/register",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-delivery-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-delivery-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/drivers/register",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": ["POST"]
     },
     {
       "DownstreamPathTemplate": "/api/drivers/login",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-delivery-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-delivery-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/drivers/login",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": ["POST"]
     },
     {
       "DownstreamPathTemplate": "/api/drivers/{id}/cities",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
-        { "Host": "restaurant-delivery-management-backend-production.up.railway.app", "Port": 443 }
+        {
+          "Host": "restaurant-delivery-management-backend-production.up.railway.app",
+          "Port": 443
+        }
       ],
       "UpstreamPathTemplate": "/gateway/drivers/{id}/cities",
-      "UpstreamHttpMethod": [ "PUT" ]
+      "UpstreamHttpMethod": ["PUT"]
     },
-{
-  "DownstreamPathTemplate": "/api/payment/{everything}",
-  "DownstreamScheme": "https",
-  "DownstreamHostAndPorts": [
-    { "Host": "payment-gateway-production-e3ce.up.railway.app", "Port": 443 }
-  ],
-  "UpstreamPathTemplate": "/gateway/payment/{everything}",
-  "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-},
-{
-  "DownstreamPathTemplate": "/api/payment/paypal/create",
-  "DownstreamScheme": "https",
-  "DownstreamHostAndPorts": [
-    { "Host": "payment-gateway-production-e3ce.up.railway.app", "Port": 443 }
-  ],
-  "UpstreamPathTemplate": "/gateway/payment/paypal/create",
-  "UpstreamHttpMethod": [ "POST" ]
-},
-{
-  "DownstreamPathTemplate": "/api/payment/paypal/capture/{orderId}",
-  "DownstreamScheme": "https",
-  "DownstreamHostAndPorts": [
-    { "Host": "payment-gateway-production-e3ce.up.railway.app", "Port": 443 }
-  ],
-  "UpstreamPathTemplate": "/gateway/payment/paypal/capture/{orderId}",
-  "UpstreamHttpMethod": [ "POST" ]
-},
-{
-  "DownstreamPathTemplate": "/api/payment/cod",
-  "DownstreamScheme": "https",
-  "DownstreamHostAndPorts": [
-    { "Host": "payment-gateway-production-e3ce.up.railway.app", "Port": 443 }
-  ],
-  "UpstreamPathTemplate": "/gateway/payment/cod",
-  "UpstreamHttpMethod": [ "POST" ]
-},
+    {
+      "DownstreamPathTemplate": "/api/payment/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/payment/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/paypal/create",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/payment/paypal/create",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/paypal/capture/{orderId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/payment/paypal/capture/{orderId}",
+      "UpstreamHttpMethod": ["POST"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/payment/cod",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/payment/cod",
+      "UpstreamHttpMethod": ["POST"]
+    },
 
-{
-  "DownstreamPathTemplate": "/api/notification/{everything}",
-  "DownstreamScheme": "https",
-  "DownstreamHostAndPorts": [
-    { "Host": "payment-gateway-production-e3ce.up.railway.app", "Port": 443 }
-  ],
-  "UpstreamPathTemplate": "/gateway/email/{everything}",
-  "UpstreamHttpMethod": [ "POST" ]
-},
+    {
+      "DownstreamPathTemplate": "/api/notification/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/email/{everything}",
+      "UpstreamHttpMethod": ["POST"]
+    },
 
-{
-  "DownstreamPathTemplate": "/api/notification/{everything}",
-  "DownstreamScheme": "https",
-  "DownstreamHostAndPorts": [
-    { "Host": "payment-gateway-production-e3ce.up.railway.app", "Port": 443 }
-  ],
-  "UpstreamPathTemplate": "/gateway/notification/{everything}",
-  "UpstreamHttpMethod": [ "GET", "POST" ]
-}
-  
-    ],
-  
-    "GlobalConfiguration": {
-      "BaseUrl": "https://deliveroo-api-gateway.onrender.com"
+    {
+      "DownstreamPathTemplate": "/api/notification/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/notification/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST"]
     }
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl": "https://deliveroo-api-gateway.onrender.com"
   }
+}
