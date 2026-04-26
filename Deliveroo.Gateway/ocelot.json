@@ -159,7 +159,7 @@
       "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
     },
     {
-      "DownstreamPathTemplate": "/api/userdetails/userdetails/{everything}",
+      "DownstreamPathTemplate": "/api/userdetails/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
