@@ -310,7 +310,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Host": "email-gateway-production-0519.up.railway.app",
           "Port": 443
         }
       ],
@@ -323,7 +323,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "payment-gateway-production-e3ce.up.railway.app",
+          "Host": "email-gateway-production-0519.up.railway.app",
           "Port": 443
         }
       ],
