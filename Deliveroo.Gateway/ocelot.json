@@ -230,7 +230,7 @@
       ],
       "UpstreamPathTemplate": "/gateway/drivers/register",
       "UpstreamHttpMethod": ["POST"],
-      "Priority": 2
+      "Priority": 0
     },
     {
       "DownstreamPathTemplate": "/api/drivers/login",
